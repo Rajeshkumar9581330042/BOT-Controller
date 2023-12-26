@@ -1,0 +1,128 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Data_Extraction" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Out_ExtractDataTable" Type="OutArgument(sd:DataTable)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1410.4,664.8</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Data_Extraction_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Data_Extraction" sap:VirtualizedContainerService.HintSize="545.6,600" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="483.2,488" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="16aacf86-a518-49e6-b81f-8c40f2501f41" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,271.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[Out_ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='IP Addresses' ReferenceName='IP Addresses' ReferenceIdx='0'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='User Id' ReferenceName='User Id' ReferenceIdx='1'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' IsDeleted='true' Name='Encrypted Password' ReferenceName='Encrypted Password' ReferenceIdx='2'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='IP Addresses' attr='fulltext' /&gt;&lt;column name='User Id' attr='fulltext' /&gt;&lt;column name='Encrypted Password' attr='fulltext' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" Version="V3">
+              <uix:NExtractData.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="617, 523, 615, 1585" DesignTimeScaleFactor="1.3799999952316284" FriendlyName="'IP AddressesUser'" FullSelectorArgument="&lt;webctrl id='ipTable' tag='TABLE' /&gt;" Guid="7547503a-5e71-4193-af99-5bb3ee661cc8" InformativeScreenshot="fbdaf76aaf869652abe8cb0816b109c1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='botsDNA.com-Remote Desktop' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NExtractData.Target>
+            </uix:NExtractData>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Edge" IconBase64="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" InformativeScreenshot="e67cac77b71fbec5d9a4ae3517716366.jpg" Selector="&lt;html app='msedge.exe' title='botsDNA.com-Remote Desktop' /&gt;" Title="botsDNA.com-Remote Desktop" Url="https://botsdna.com/RemoteDesktop/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
